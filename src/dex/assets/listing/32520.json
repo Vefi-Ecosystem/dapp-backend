@@ -117,5 +117,12 @@
     "symbol": "USDB",
     "decimals": 18,
     "logoURI": "https://drive.google.com/uc?export=view&id=1RaOE1NXcl7-Zo7UKKOwEV7cTgchXBnmM"
+  },
+  {
+    "name": "Rice Token",
+    "address": "0x1eb697Cb6F457F6a65C682F7f7c65F9f2E622A34",
+    "symbol": "RICE",
+    "decimals": 18,
+    "logoURI": "https://thesphynx.co/images/tokens/32520/0x1eb697cb6f457f6a65c682f7f7c65f9f2e622a34.png"
   }
 ]
