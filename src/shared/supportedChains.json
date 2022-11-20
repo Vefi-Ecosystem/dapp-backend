@@ -19,7 +19,7 @@
     },
     "32520": {
       "name": "Bitgert Mainnet",
-      "rpcUrl": "https://rpc.icecreamswap.com",
+      "rpcUrl": "https://nodes.vefinetwork.org/bitgert",
       "explorerUrl": "https://brisescan.com"
     },
     "86": {
