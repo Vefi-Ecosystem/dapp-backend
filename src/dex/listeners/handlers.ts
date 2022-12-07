@@ -57,15 +57,11 @@ export const getPastLogsForFactory = async (url: string, factory: string, chainI
     logger("----- Iterating logs for factory %s -----", factory);
     for (const log of logs) {
       {
-        const { args, name } = factoryAbiInterface.parseLog(log);
+        const { name } = factoryAbiInterface.parseLog(log);
 
         switch (name) {
           case "PairCreated": {
-            const [token0, token1, pair] = args;
-            logger("----- New pair created %s -----", pair);
-            await pushPairToDB(pair, token0, token1, chainId);
-            await propagateLastBlockNumberForFactory(log.blockNumber, chainId);
-            watchPair(url, pair, chainId);
+            await handlePairCreatedEvent(url, chainId)(log);
             break;
           }
           default: {

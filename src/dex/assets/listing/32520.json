@@ -84,6 +84,13 @@
     "logoURI": "https://assets.coingecko.com/coins/images/25434/thumb/LOGO-08.png?1651739718"
   },
   {
+    "name": "Vefi Ecosystem Token V2",
+    "address": "0xA0beD207C2449e84dc56128B22FdB077C1930495",
+    "symbol": "VEF",
+    "decimals": 18,
+    "logoURI": "https://assets.coingecko.com/coins/images/25434/thumb/LOGO-08.png?1651739718"
+  },
+  {
     "name": "Evo.Finance",
     "address": "0x267ae4ba9ce5ef3c87629812596b0d89ecbd81dd",
     "symbol": "EVO",
