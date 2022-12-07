@@ -147,83 +147,27 @@ export const getPastLogsForAllPairs = async (url: string, chainId: string) => {
         logger("----- Iterating logs for pair %s -----", model.id);
         for (const log of logs) {
           {
-            const { args, name } = pairAbiInterface.parseLog(log);
+            const { name } = pairAbiInterface.parseLog(log);
 
             switch (name) {
               case "Sync": {
-                logger(
-                  "----- Retrieving sync event with transaction hash %s and block number %s for pair %s -----",
-                  log.transactionHash,
-                  log.blockNumber,
-                  model.id
-                );
-                const [reserve0, reserve1] = args;
-                await propagateSyncEventData(model.id, reserve0.toString(), reserve1.toString(), log.transactionHash, chainId);
-                await propagateLastBlockNumberForPairs(model.id, log.blockNumber, chainId);
+                await handleSyncEvent(model.id, chainId)(log);
                 break;
               }
               case "Swap": {
-                logger(
-                  "----- Retrieving swap event with transaction hash %s and block number %s for pair %s -----",
-                  log.transactionHash,
-                  log.blockNumber,
-                  model.id
-                );
-                const [, amount0In, amount1In, amount0Out, amount1Out, to] = args;
-                await propagateSwapEventData(
-                  model.id,
-                  amount0In.toString(),
-                  amount1In.toString(),
-                  amount0Out.toString(),
-                  amount1Out.toString(),
-                  to,
-                  log.transactionHash,
-                  chainId
-                );
-                await propagateEventForPairs(
-                  model.id,
-                  BigNumber.from(amount0In.toString()).gt("0") ? amount0In.toString() : amount0Out.toString(),
-                  BigNumber.from(amount1In.toString()).gt("0") ? amount1In.toString() : amount1Out.toString(),
-                  "swap",
-                  chainId,
-                  log.transactionHash
-                );
-                await propagateLastBlockNumberForPairs(model.id, log.blockNumber, chainId);
+                await handleSwapEvent(model.id, chainId)(log);
                 break;
               }
               case "Transfer": {
-                logger(
-                  "----- Retrieving transfer event with transaction hash %s and block number %s for pair %s -----",
-                  log.transactionHash,
-                  log.blockNumber,
-                  model.id
-                );
-                const [from, to, amount] = args;
-                await propagateTransferEventData(model.id, from, to, amount.toString(), log.transactionHash, chainId);
-                await propagateLastBlockNumberForPairs(model.id, log.blockNumber, chainId);
+                await handleTransferEvent(model.id, chainId)(log);
                 break;
               }
               case "Mint": {
-                const [, amount0, amount1] = args;
-                logger(
-                  "----- Retrieving mint event with transaction hash %s and block number %s for pair %s -----",
-                  log.transactionHash,
-                  log.blockNumber,
-                  model.id
-                );
-                await propagateEventForPairs(model.id, amount0.toString(), amount1.toString(), "mint", chainId, log.transactionHash);
-                await propagateLastBlockNumberForPairs(model.id, log.blockNumber, chainId);
+                await handleMintEvent(model.id, chainId)(log);
                 break;
               }
               case "Burn": {
-                const [, amount0, amount1] = args;
-                logger(
-                  "----- Retrieving burn event with transaction hash %s and block number %s for pair %s -----",
-                  log.transactionHash,
-                  log.blockNumber,
-                  model.id
-                );
-                await propagateEventForPairs(model.id, amount0.toString(), amount1.toString(), "burn", chainId, log.transactionHash);
+                await handleBurnEvent(model.id, chainId)(log);
                 break;
               }
               default: {

@@ -30,7 +30,7 @@ export const handleTokenSaleItemCreatedEvent = (chainId: string) => {
         admin
       ] = args;
 
-      logger("----- Creating public sale item: %s -----", saleId);
+      logger("----- Creating private sale item: %s -----", saleId);
 
       await privateTokenSales.addPrivateTokenSaleItem(
         saleId,
@@ -79,43 +79,11 @@ export const getPastLogsForPrivateSaleCreator = async (saleCreator: string, chai
     logger("----- Iterating logs for sale creator %s -----", saleCreator);
     for (const log of logs) {
       {
-        const { args, name } = saleCreatorAbiInterface.parseLog(log);
+        const { name } = saleCreatorAbiInterface.parseLog(log);
 
         switch (name) {
           case "TokenSaleItemCreated": {
-            const [
-              saleId,
-              token,
-              tokensForSale,
-              hardCap,
-              softCap,
-              presaleRate,
-              minContributionEther,
-              maxContributionEther,
-              startTime,
-              endTime,
-              proceedsTo,
-              admin
-            ] = args;
-
-            logger("----- Creating public sale item: %s -----", saleId);
-
-            await privateTokenSales.addPrivateTokenSaleItem(
-              saleId,
-              token,
-              parseInt(tokensForSale.toString()),
-              chainId,
-              parseInt(hardCap.toString()),
-              parseInt(softCap.toString()),
-              parseInt(presaleRate.toString()),
-              parseInt(minContributionEther.toString()),
-              parseInt(maxContributionEther.toString()),
-              _.multiply(parseInt(startTime.toString()), 1000),
-              proceedsTo,
-              _.multiply(parseInt(endTime.toString()), 1000),
-              admin
-            );
-            await propagateLastBlockNumberForPrivateSaleCreator(log.blockNumber, chainId);
+            await handleTokenSaleItemCreatedEvent(chainId)(log);
             break;
           }
           default: {

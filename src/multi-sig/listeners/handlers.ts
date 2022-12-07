@@ -41,14 +41,11 @@ export const getPastLogsForMultiSigAction = async (action: string, chainId: stri
     logger("----- Iterating logs for multi-sig actions %s -----", action);
     for (const log of logs) {
       {
-        const { args, name } = multisigActionsAbiInterface.parseLog(log);
+        const { name } = multisigActionsAbiInterface.parseLog(log);
 
         switch (name) {
           case "MultiSigDeployed": {
-            const [wallet, signatories, requiredConfirmations] = args;
-            logger("----- New multisig wallet created %s -----", wallet);
-            await multisig.addMultiSigWallet(wallet, signatories, requiredConfirmations, chainId);
-            propagateLastBlockNumberForMultiSigAction(log.blockNumber, chainId);
+            await handleMultiSigDeployedEvent(chainId)(log);
             break;
           }
           default: {
