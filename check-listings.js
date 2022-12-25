@@ -35,7 +35,7 @@ const supportedChains = [1, 56, 86, 97, 311, 1337, 32520, 888, 66];
       assert(typeof item.symbol, "string", "token symbol must be a string");
       assert(typeof item.name, "string", "token name must be a string");
       assert(typeof item.logoURI, "string", "token logo URI must be a string");
-      assert(isURL(item.logoURI), "string", "token logo URI must be a valid URL");
+      assert(isURL(item.logoURI), "token logo URI must be a valid URL");
     });
   });
 
