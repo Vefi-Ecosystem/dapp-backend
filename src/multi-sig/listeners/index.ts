@@ -19,8 +19,10 @@ function listenForAllMultiSigActionsEvents() {
       const provider = buildProvider(chains[key].rpcUrl);
       const address = actions[key as keyof typeof actions];
 
-      logger("----- Initializing watch for %s -----", address);
-      provider.on({ address, topics: [multiSigDeployedEventId] }, handleMultiSigDeployedEvent(hexValue(parseInt(key))));
+      if (!!address) {
+        logger("----- Initializing watch for %s -----", address);
+        provider.on({ address, topics: [multiSigDeployedEventId] }, handleMultiSigDeployedEvent(hexValue(parseInt(key))));
+      }
     });
   } catch (error: any) {
     logger(error.message);
@@ -30,7 +32,8 @@ function listenForAllMultiSigActionsEvents() {
 function getPastMultiSigActionsEvents() {
   try {
     _.keys(chains).forEach(async key => {
-      await getPastLogsForMultiSigAction(actions[key as keyof typeof actions], hexValue(parseInt(key)));
+      const action = actions[key as keyof typeof actions];
+      if (!!action) await getPastLogsForMultiSigAction(actions[key as keyof typeof actions], hexValue(parseInt(key)));
     });
   } catch (error: any) {
     logger(error.message);

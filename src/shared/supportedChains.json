@@ -36,6 +36,11 @@
       "name": "OKX Chain Mainnet",
       "rpcUrl": "https://exchainrpc.okex.org",
       "explorerUrl": "https://oklink.com/en/okc"
+    },
+    "1": {
+      "name": "Ethereum",
+      "rpcUrl": "https://eth.llamarpc.com",
+      "explorerUrl": "https://etherscan.io"
     }
   }
 }

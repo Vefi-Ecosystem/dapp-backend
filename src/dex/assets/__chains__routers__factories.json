@@ -30,5 +30,9 @@
   "66": {
     "factory": "0x64FAF984Bf60dE19e24238521814cA98574E3b00",
     "router": "0xE41d241720FEE7cD6BDfA9aB3204d23687703CD5"
+  },
+  "1": {
+    "factory": "0x2CF6165c121EFadab70C42CEd85De8f742B29AA4",
+    "router": "0x7B273b6Ab7e43Fad5319374622cDcbB2d00F62e7"
   }
 }

@@ -18,10 +18,12 @@ function listenForAllStakingPoolEvents() {
   try {
     _.keys(chains).forEach(key => {
       const provider = buildProvider(chains[key].rpcUrl);
-      const address = xInfo[key as keyof typeof xInfo].actions;
+      const address = xInfo[key as keyof typeof xInfo]?.actions;
 
-      logger("----- Initializing watch for %s -----", address);
-      provider.on({ address, topics: [stakingPoolDeployedEventId] }, handleStakingPoolDeployedEvent(chains[key].rpcUrl, hexValue(parseInt(key))));
+      if (!!address) {
+        logger("----- Initializing watch for %s -----", address);
+        provider.on({ address, topics: [stakingPoolDeployedEventId] }, handleStakingPoolDeployedEvent(chains[key].rpcUrl, hexValue(parseInt(key))));
+      }
     });
   } catch (error: any) {
     logger(error.message);
@@ -31,8 +33,11 @@ function listenForAllStakingPoolEvents() {
 function getPastStakingPoolEvents() {
   try {
     _.keys(chains).forEach(async key => {
-      await getPastLogsForActions(chains[key].rpcUrl, xInfo[key as keyof typeof xInfo].actions, hexValue(parseInt(key)));
-      await getPastLogsForAllPools(chains[key].rpcUrl, hexValue(parseInt(key)));
+      const address = xInfo[key as keyof typeof xInfo]?.actions;
+      if (!!address) {
+        await getPastLogsForActions(chains[key].rpcUrl, xInfo[key as keyof typeof xInfo].actions, hexValue(parseInt(key)));
+        await getPastLogsForAllPools(chains[key].rpcUrl, hexValue(parseInt(key)));
+      }
     });
   } catch (error: any) {
     logger(error.message);
