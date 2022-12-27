@@ -41,6 +41,11 @@
       "name": "Ethereum",
       "rpcUrl": "https://eth.llamarpc.com",
       "explorerUrl": "https://etherscan.io"
+    },
+    "137": {
+      "name": "Polygon",
+      "rpcUrl": "https://polygon-rpc.com",
+      "explorerUrl": "https://polygonscan.com"
     }
   }
 }
