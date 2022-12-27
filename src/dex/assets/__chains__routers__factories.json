@@ -34,5 +34,9 @@
   "1": {
     "factory": "0x2CF6165c121EFadab70C42CEd85De8f742B29AA4",
     "router": "0x7B273b6Ab7e43Fad5319374622cDcbB2d00F62e7"
+  },
+  "137": {
+    "factory": "0xcA01ffA17C46ba079572147EDE463B9F0690e1e6",
+    "router": "0x15EDEa3D3b4C59E8d76B8BF9374ed4f60F58e3b7"
   }
 }
