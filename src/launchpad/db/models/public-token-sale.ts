@@ -23,15 +23,15 @@ export type PublicTokenSaleItemModel = {
 const model = buildModel("PublicTokenSaleItem", {
   id: { type: DataTypes.STRING, primaryKey: true },
   token: { type: DataTypes.STRING, allowNull: false },
-  tokensForSale: { type: DataTypes.BIGINT, allowNull: false },
-  hardCap: { type: DataTypes.BIGINT, allowNull: false },
-  softCap: { type: DataTypes.BIGINT, allowNull: false },
-  presaleRate: { type: DataTypes.BIGINT, allowNull: false },
-  minContribution: { type: DataTypes.BIGINT, allowNull: false },
-  maxContribution: { type: DataTypes.BIGINT, allowNull: false },
-  startTime: { type: DataTypes.BIGINT, allowNull: false },
+  tokensForSale: { type: DataTypes.STRING, allowNull: false },
+  hardCap: { type: DataTypes.STRING, allowNull: false },
+  softCap: { type: DataTypes.STRING, allowNull: false },
+  presaleRate: { type: DataTypes.STRING, allowNull: false },
+  minContribution: { type: DataTypes.STRING, allowNull: false },
+  maxContribution: { type: DataTypes.STRING, allowNull: false },
+  startTime: { type: DataTypes.STRING, allowNull: false },
   proceedsTo: { type: DataTypes.STRING, allowNull: false },
-  endTime: { type: DataTypes.BIGINT, allowNull: false },
+  endTime: { type: DataTypes.STRING, allowNull: false },
   admin: { type: DataTypes.STRING, allowNull: false },
   chainId: { type: DataTypes.STRING, allowNull: false }
 });
@@ -57,16 +57,16 @@ function addPublicTokenSaleItem(
         .create({
           id,
           token,
-          tokensForSale,
+          tokensForSale: tokensForSale.toString(),
           chainId,
-          hardCap,
-          softCap,
-          presaleRate,
-          minContribution,
-          maxContribution,
-          startTime,
+          hardCap: hardCap.toString(),
+          softCap: softCap.toString(),
+          presaleRate: presaleRate.toString(),
+          minContribution: minContribution.toString(),
+          maxContribution: maxContribution.toString(),
+          startTime: startTime.toString(),
           proceedsTo,
-          endTime,
+          endTime: endTime.toString(),
           admin
         })
         .then(m => resolve(m.toJSON()))
