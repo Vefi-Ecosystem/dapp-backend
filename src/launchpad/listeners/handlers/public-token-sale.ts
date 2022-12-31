@@ -1,6 +1,6 @@
 import { Interface } from "@ethersproject/abi";
 import { hexValue } from "@ethersproject/bytes";
-import { abi } from "vefi-token-launchpad-staking/artifacts/contracts/TokenSaleCreator.sol/TokenSaleCreator.json";
+import { abi } from "vefi-token-launchpad-staking/artifacts/contracts/PublicTokenSaleCreator.sol/PublicTokenSaleCreator.json";
 import assert from "assert";
 import _ from "lodash";
 import { publicTokenSales } from "../../db/models";

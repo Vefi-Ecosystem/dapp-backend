@@ -19,7 +19,7 @@ const chains = supportedChains[env === "production" ? "mainnet" : "testnet"] as 
 
 // Event ID
 const saleItemCreatedEventId = hashId(
-  "TokenSaleItemCreated(bytes32,address,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address)"
+  "TokenSaleItemCreated(address,address,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address)"
 );
 
 function listenForAllSaleCreatorEvents() {
