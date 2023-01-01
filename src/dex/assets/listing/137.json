@@ -250,5 +250,12 @@
     "symbol": "MATIC",
     "decimals": 18,
     "logoURI": "https://assets.coingecko.com/coins/images/4713/thumb/matic-token-icon.png?1624446912"
+  },
+  {
+    "name": "PGEM",
+    "address": "0x13E452589806A9AcBE055f7424D4a49eE2d33284",
+    "symbol": "$PGEM",
+    "decimals": 18,
+    "logoURI": "https://d1fdloi71mui9q.cloudfront.net/TLfK2Q9UTFmB5qUhSJg8_pPIMkNN37A22Q1y8"
   }
 ]
