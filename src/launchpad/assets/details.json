@@ -14,5 +14,46 @@
         "team": 30
       }
     }
+  },
+  "137": {
+    "0x2D43c23e683858E0b6528C3d89fd8eb18Dc117aA": {
+      "description": "POLYGAME - The First Decentralized eSports Ecosystem which encompasses Streamers, Players, Teams, Tournament Operators and Advertisers with a mission to connect next 1 Billion gamers. 🏆\n🧩 POLYGAME Solution\n A Decentralised eSports platform where ecosystem participants can “play-compete-own-earn” with PGEM token as the underlying utility currency.\n 📌Activities driving PGEM utility on POLYGAME Platform:\n ♦️Fan Tokens IPOs : Each team and streamer will issue Social tokens via ICO as promoter of the ICO. All fans need to buy social / Creator tokens using PGEM Tokens in the IPO. The price of a social token follows a bonding curve similar to Bancor’s AMM curve. Social tokens are aspiration because they unlock accessibility and exclusivity to the team and streamers. As the clout of the promoter increases the demand for the social tokens will increase necessitating the need for new IPOs.\n ♦️Fan Token P2P exchange enables robust buying and selling of social tokens on POLYGAME platform and PGEM tokens are paid by the seller and buyer as transaction fee and PGEM collected are burnt at regular interval to generate money for the ecosystem participants and also control total PGEM in circulation.\n ♦️NFT Marketplace: POLYGAME will charge a transaction fee in PGEM Tokens for every sale of NFT. The NFT marketplace will be integrated with other major marketplaces such as Rarible or OpenSea in just one click.:\n ➡️Player/Streamer Cards\n ➡️Team Memorabilia\n ✨Decentralized/Centralized Integrations✨\n Besides integrations that are built core into the POLYGAME blockchain, PGEM will be used as currency for on chain games and virtual gifting during live streaming.\n ♻️Utility Core loop of PGEM Token\n The PGEM token is the underlying token that is used to power the POLYGAME blockchain, provide liquidity to all of the various social tokens that will exist on the POLYGAME platform and boost the engagement on the platform.\n PGEM Utility Loop\n PGEM tokens collected by the platform from the transactions on the platform are regularly burnt to constantly create pressure on the total number of PGEM tokens in circulation thus driving up the price of the PGEM tokens.\n 🧑‍🏫 Our Team\n 🔹Co-Founder investor : Sushil Chhillar - https://www.linkedin.com/in/sushil-chhillar-7aa50b55/➡️ has built multiple million dollar PNLs from scratch\n 🔹Co-Founder investor : Ishaan Singh - https://www.linkedin.com/in/ishaansinghb26100b8/➡️ is a passionate gamer and drives ad revenues in gaming apps in Southeast Asia\n 🔹Cofounder & CEO Poly X : Hardik Singh - https://www.linkedin.com/in/hardik-singh-592322227 ➡️ is having more than 9 years of experience in regular and crypto exchanges\n 🔹 Cofounder & CEO Polystream: Swati Mukhi - https://www.linkedin.com/in/swati-mukhi-501772232 ➡️ is\n $ Backers and Investors $\n 🔸Centauri Capital\n🔸Node Capital\n🔸Lucid Blue Ventures\n🔸Gotbit\n🔸5ire Capital\n🔸Sheesha Finance\n Strategic Advisors & Investors\n 🔸Charlie Hu - Managing Partner, Lucid Blue Ventures, Ex China and South East Asia Head (POLYGON MATIC)\n 🔸Manish Agarwal - CEO Nazara Tech\n 🔸Serge Ajamian - Managing Partner Centauri Capital, CBO Beemup Microsoft\n 🔸Abdulla Al Ameri - CEO, Centauri Capital\n 🔸Chris Tan - Ex Global Production Head, Riot Games\n 🔸Sunny River - CEO JPEG Culture\n Strategic Partners\n 🔸Tencent\n🔸Polygen\n🔸ABGA\n🔸Acknowledger\n🔸Zampad\n🔸Gotbit\n Esports Team Partners\n 🔸Onic Esports\n🔸Aura Esports\n🔸JLD Esports\n🔸Cornerstone\n Advertising Partners\n 🔸Adcolony\n🔸Spot X\n🔸Google DV360\n🔸Smaato\n🌟 Salient Takeaways 🌟💵📈\n ✅ Live Product (POLYGAME) with over 700K + MAUs and 50 + tier A streamers\n ✅ Untapped eSports NFT and Social Tokens Market in South East Asia\n ✅ Team & Foundational tokens vested over 2 years\n Polygame Links\nhttps://linktr.ee/polygame",
+      "urls": {
+        "website": "https://tr.ee/CLyfesSaR-",
+        "telegram": "https://tr.ee/uYGr0o3Qm_",
+        "discord": "https://tr.ee/IN-n6blcWB",
+        "twitter": "https://tr.ee/hzn2Ylekeu"
+      },
+      "tokenomics": {
+        "early investors": 1,
+        "seed": 1,
+        "strategic 1": 1,
+        "private": 2,
+        "public": 1,
+        "staking": 15,
+        "ecosystem": 20,
+        "lp": 5,
+        "marketing / legal": 5,
+        "advisors": 3,
+        "team": 16,
+        "airdrop": 10,
+        "geo expansion / reserves": 20
+      },
+      "vestingSchedule": {
+        "Early Investors": "0.5% on TGE/0.5% weekly for 8 weeks/ Daily Linear Unlocking for 24 Months",
+        "Seed": "0.75% on TGE/0.5% weekly for 8 weeks/ Daily Linear Unlocking for 20 Months",
+        "Strategic 1": "1% on TGE/0.5% weekly for 8 weeks/ Daily Linear Unlocking for 16 Months",
+        "Private": "1.25% on TGE/0.5% weekly for 8 weeks/ Daily Linear Unlocking for 12 Months",
+        "Public": "2% on TGE/0.5% weekly for 8 weeks/ Daily Linear Unlocking for 9 Months",
+        "Staking": "30 Days cliff / Daily Linear Unlock after issuance of staking tokens",
+        "Ecosystem": "Daily Linear Unlock for 36 months after that (36 months total) - Starting Month 1",
+        "LP": "12 Months vested equally for Liquidity and Market Creation",
+        "Marketing / Legal": "1% on TGE/0.5% weekly for 8 weeks/ Daily Linear Unlocking for 16 Months",
+        "Advisors": "0.5% weekly for 8 weeks/ Daily Linear Unlocking for 20 Months",
+        "Team": "Locked for 3 Months/Daily Linear Unlock for 24 months after that (24 months total)",
+        "Airdrop": "Fully unlock after 15 days of receiving the reward",
+        "Geo Expansion / Reserves": "5% every quarter after 3 Months"
+      }
+    }
   }
 }
